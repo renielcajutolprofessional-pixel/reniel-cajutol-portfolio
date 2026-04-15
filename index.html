@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reniel Cajutol, RN | Healthcare Virtual Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'medical-blue': '#E6F2F8',
+                        'soft-blue': '#B8D4E3',
+                        'pastel-maroon': '#C9A9A6',
+                        'deep-maroon': '#A67C7A',
+                        'pastel-purple': '#D4C4DD',
+                        'medical-white': '#FAFBFC',
+                        'text-primary': '#2D3748',
+                        'text-secondary': '#718096'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #A67C7A 0%, #D4C4DD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .medical-cross {
+            position: relative;
+        }
+        .medical-cross::before {
+            content: '+';
+            position: absolute;
+            color: #C9A9A6;
+            opacity: 0.1;
+            font-size: 200px;
+            font-weight: 300;
+            z-index: 0;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-primary bg-medical-white smooth-scroll">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-soft-blue/30 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pastel-maroon to-pastel-purple flex items-center justify-center text-white font-bold text-lg">
+                        RC
+                    </div>
+                    <span class="font-serif text-xl font-semibold text-text-primary">Reniel Cajutol</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-text-secondary hover:text-deep-maroon transition-colors font-medium">About</a>
+                    <a href="#services" class="text-text-secondary hover:text-deep-maroon transition-colors font-medium">Services</a>
+                    <a href="#tools" class="text-text-secondary hover:text-deep-maroon transition-colors font-medium">Tools</a>
+                    <a href="#credentials" class="text-text-secondary hover:text-deep-maroon transition-colors font-medium">Credentials</a>
+                    <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-pastel-maroon to-deep-maroon text-white rounded-full hover:shadow-lg transition-all font-medium">Contact Me</a>
+                </div>
+                <button class="md:hidden text-text-primary" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-soft-blue/30">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#about" class="block py-2 text-text-secondary hover:text-deep-maroon">About</a>
+                <a href="#services" class="block py-2 text-text-secondary hover:text-deep-maroon">Services</a>
+                <a href="#tools" class="block py-2 text-text-secondary hover:text-deep-maroon">Tools</a>
+                <a href="#credentials" class="block py-2 text-text-secondary hover:text-deep-maroon">Credentials</a>
+                <a href="#contact" class="block py-2 text-deep-maroon font-semibold">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-medical-blue via-white to-pastel-purple/20"></div>
+        <div class="absolute top-20 right-0 w-96 h-96 bg-pastel-maroon/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-soft-blue/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-fade-in">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/80 border border-soft-blue/50 text-sm font-medium text-deep-maroon">
+                        <span class="w-2 h-2 rounded-full bg-green-400 mr-2 pulse-soft"></span>
+                        Available for New Clients
+                    </div>
+                    
+                    <h1 class="font-serif text-5xl lg:text-6xl font-bold leading-tight">
+                        Philippine RN | <span class="gradient-text">Healthcare Virtual Assistant</span>
+                    </h1>
+                    
+                    <p class="text-xl text-text-secondary leading-relaxed max-w-lg">
+                        Supporting doctors and clinics with reliable healthcare administrative support so they can focus more on patient care.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-pastel-maroon to-deep-maroon text-white rounded-full font-semibold hover:shadow-xl transition-all text-center">
+                            Contact Me <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#services" class="px-8 py-4 bg-white border-2 border-soft-blue text-text-primary rounded-full font-semibold hover:border-pastel-maroon hover:text-deep-maroon transition-all text-center">
+                            View Services
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-6 pt-4 text-sm text-text-secondary">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>HIPAA Aware</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Registered Nurse</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Philippine Based</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pastel-maroon/20 to-pastel-purple/20 rounded-3xl transform rotate-3"></div>
+                    <div class="relative bg-white p-4 rounded-3xl shadow-2xl">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-medical-blue relative">
+                            <!-- Placeholder for professional photo - REPLACE THIS URL -->
+                            <img src="https://lh3.googleusercontent.com/d/1BmR0yhmTmIXSlbaYxUS_KC90Q9duCIWu" 
+                                 alt="Reniel Cajutol, RN - Healthcare Virtual Assistant" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            
+                            <!-- Badge overlay -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pastel-maroon to-deep-maroon flex items-center justify-center text-white">
+                                        <i class="fas fa-user-nurse text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-text-primary">Reniel Cajutol, RN</p>
+                                        <p class="text-sm text-text-secondary">Philippine Registered Nurse</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl animate-bounce" style="animation-duration: 3s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="text-sm">
+                                <p class="font-semibold text-text-primary">Patient Care</p>
+                                <p class="text-text-secondary">Focused</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Background / Credentials Section -->
+    <section id="credentials" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pastel-maroon via-pastel-purple to-soft-blue"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl lg:text-4xl font-bold text-text-primary mb-4">Clinical Background</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Medical credentials that build immediate trust with healthcare providers</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card rounded-2xl p-6 hover-lift border-l-4 border-pastel-maroon">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pastel-maroon/20 to-pastel-maroon/40 flex items-center justify-center text-deep-maroon text-2xl mb-4">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Registered Nurse</h3>
+                    <p class="text-text-secondary text-sm">Licensed Philippine Registered Nurse with active PRC license</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 hover-lift border-l-4 border-pastel-purple">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pastel-purple/20 to-pastel-purple/40 flex items-center justify-center text-purple-700 text-2xl mb-4">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Medical-Surgical Ward</h3>
+                    <p class="text-text-secondary text-sm">Direct clinical experience in medical-surgical nursing care</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 hover-lift border-l-4 border-soft-blue">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-soft-blue/30 to-soft-blue/50 flex items-center justify-center text-blue-700 text-2xl mb-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Company Nurse</h3>
+                    <p class="text-text-secondary text-sm">BPO Industry experience providing occupational health services</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 hover-lift border-l-4 border-deep-maroon">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pastel-maroon/30 to-deep-maroon/30 flex items-center justify-center text-deep-maroon text-2xl mb-4">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Documentation Expert</h3>
+                    <p class="text-text-secondary text-sm">Specialized in patient documentation and care coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-medical-blue/30 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-pastel-maroon/20 rounded-full"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-pastel-purple/20 rounded-full"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl">
+                            <div class="grid grid-cols-2 gap-4">
+                                <!-- UPDATED STATS - OPTION 2 -->
+                                <div class="bg-medical-blue/50 rounded-2xl p-4 text-center">
+                                    <i class="fas fa-hands-helping text-3xl text-deep-maroon mb-2"></i>
+                                    <p class="font-semibold text-lg">Direct Patient</p>
+                                    <p class="text-sm text-text-secondary">Care & Support</p>
+                                </div>
+                                <div class="bg-pastel-purple/20 rounded-2xl p-4 text-center">
+                                    <i class="fas fa-heartbeat text-3xl text-purple-700 mb-2"></i>
+                                    <p class="font-semibold text-lg">Bedside +</p>
+                                    <p class="text-sm text-text-secondary">Occupational Health</p>
+                                </div>
+                                <div class="bg-pastel-maroon/10 rounded-2xl p-4 text-center">
+                                    <i class="fas fa-handshake text-3xl text-deep-maroon mb-2"></i>
+                                    <p class="font-semibold text-lg">Physician</p>
+                                    <p class="text-sm text-text-secondary">Collaboration</p>
+                                </div>
+                                <div class="bg-soft-blue/30 rounded-2xl p-4 text-center">
+                                    <i class="fas fa-award text-3xl text-blue-700 mb-2"></i>
+                                    <p class="font-semibold text-2xl">100%</p>
+                                    <p class="text-sm text-text-secondary">Commitment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 space-y-6">
+                    <h2 class="font-serif text-4xl font-bold text-text-primary">About Reniel</h2>
+                    <div class="space-y-4 text-text-secondary leading-relaxed">
+                        <p>
+                            I am a <strong class="text-text-primary">Registered Nurse from the Philippines</strong> with hands-on clinical experience in both hospital and corporate healthcare settings. My background includes working in a <strong class="text-text-primary">medical-surgical ward</strong> and serving as a <strong class="text-text-primary">company nurse in a BPO clinic</strong>.
+                        </p>
+                        <p>
+                            This diverse experience has equipped me with comprehensive skills in <strong class="text-text-primary">patient scheduling, medical documentation, employee health assessments</strong>, and seamless <strong class="text-text-primary">coordination with physicians</strong>. I excel at medical certificate validation and maintaining organized health records.
+                        </p>
+                        <p>
+                            My strengths lie in <strong class="text-text-primary">patient communication, organization, and time management</strong>. I understand the critical nature of healthcare administration and bring a calm, solution-focused approach to every task.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-deep-maroon border border-pastel-maroon/30">
+                            <i class="fas fa-check mr-2"></i>Patient-Centered
+                        </span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-purple-700 border border-pastel-purple/30">
+                            <i class="fas fa-check mr-2"></i>Detail-Oriented
+                        </span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-blue-700 border border-soft-blue/50">
+                            <i class="fas fa-check mr-2"></i>HIPAA Aware
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-text-primary mb-4">Services</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Comprehensive healthcare administrative support tailored for modern medical practices</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-medical-blue/20 rounded-2xl p-8 hover-lift border border-transparent hover:border-soft-blue transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pastel-maroon to-deep-maroon flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Patient Scheduling & Appointment Coordination</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Efficient management of patient appointments, reminders, and calendar optimization to maximize clinic workflow.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-pastel-purple/10 rounded-2xl p-8 hover-lift border border-transparent hover:border-pastel-purple transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pastel-purple to-purple-400 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Medical Records & EHR Documentation</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Accurate electronic health record management, data entry, and maintenance of organized patient files.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-soft-blue/20 rounded-2xl p-8 hover-lift border border-transparent hover:border-soft-blue transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-soft-blue to-blue-400 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Patient Communication Support</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Professional email and call handling, patient inquiries, follow-ups, and care coordination.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group bg-pastel-maroon/10 rounded-2xl p-8 hover-lift border border-transparent hover:border-pastel-maroon transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pastel-maroon to-rose-400 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Telehealth Coordination</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Virtual visit scheduling, technical support, and coordination for seamless telemedicine experiences.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group bg-medical-blue/30 rounded-2xl p-8 hover-lift border border-transparent hover:border-soft-blue transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Medical Transcription</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Accurate transcription of medical notes, dictations, and clinical documentation with attention to detail.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group bg-gradient-to-br from-pastel-purple/10 to-pastel-maroon/10 rounded-2xl p-8 hover-lift border border-transparent hover:border-pastel-purple transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="font-semibold text-xl mb-3 text-text-primary">Administrative Support</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">Comprehensive data entry, billing support, inventory management, and general office administration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 bg-medical-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-text-primary mb-4">Tools & Technology</h2>
+                <p class="text-text-secondary">Proficient in modern healthcare and productivity platforms</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-white rounded-2xl p-6 text-center hover-lift shadow-sm border border-soft-blue/30">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center">
+                        <i class="fab fa-google text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Google Workspace</h3>
+                    <p class="text-xs text-text-secondary mt-2">Docs, Sheets, Drive, Calendar</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 text-center hover-lift shadow-sm border border-soft-blue/30">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-orange-50 flex items-center justify-center">
+                        <i class="fab fa-microsoft text-3xl text-orange-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Microsoft Office</h3>
+                    <p class="text-xs text-text-secondary mt-2">Word, Excel, PowerPoint</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 text-center hover-lift shadow-sm border border-soft-blue/30">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-50 flex items-center justify-center">
+                        <i class="fab fa-trello text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Trello</h3>
+                    <p class="text-xs text-text-secondary mt-2">Project Management</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 text-center hover-lift shadow-sm border border-soft-blue/30">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-50 flex items-center justify-center">
+                        <i class="fas fa-palette text-3xl text-pink-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Canva</h3>
+                    <p class="text-xs text-text-secondary mt-2">Visual Design</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 text-center hover-lift shadow-sm border border-soft-blue/30">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-50 flex items-center justify-center">
+                        <i class="fas fa-laptop-medical text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">EHR Systems</h3>
+                    <p class="text-xs text-text-secondary mt-2">Electronic Health Records</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-text-secondary text-sm">
+                    <i class="fas fa-plus-circle text-pastel-maroon mr-2"></i>
+                    Quick learner and adaptable to new practice management software
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-pastel-maroon/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-pastel-purple/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-text-primary mb-4">Why Work With Me?</h2>
+                <p class="text-text-secondary">Trusted healthcare support that understands your practice needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-medical-blue/20 hover:bg-medical-blue/40 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-pastel-maroon/20 flex items-center justify-center text-deep-maroon flex-shrink-0">
+                        <i class="fas fa-certificate text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Philippine Registered Nurse</h3>
+                        <p class="text-text-secondary text-sm">Licensed professional with formal medical training and clinical knowledge.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-pastel-purple/10 hover:bg-pastel-purple/20 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-pastel-purple/30 flex items-center justify-center text-purple-700 flex-shrink-0">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">High Volume Experience</h3>
+                        <p class="text-text-secondary text-sm">Proven ability to manage busy patient schedules and multiple priorities.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-soft-blue/20 hover:bg-soft-blue/40 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-soft-blue/40 flex items-center justify-center text-blue-700 flex-shrink-0">
+                        <i class="fas fa-clipboard-check text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Organized & Detail-Oriented</h3>
+                        <p class="text-text-secondary text-sm">Meticulous attention to accuracy in documentation and scheduling.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-pastel-maroon/10 hover:bg-pastel-maroon/20 transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-pastel-maroon/30 flex items-center justify-center text-deep-maroon flex-shrink-0">
+                        <i class="fas fa-heart text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Strong Patient Communication</h3>
+                        <p class="text-text-secondary text-sm">Empathetic, clear, and professional interactions with patients and families.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-medical-blue/30 hover:bg-medical-blue/50 transition-colors md:col-span-2 lg:col-span-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pastel-maroon to-pastel-purple flex items-center justify-center text-white flex-shrink-0">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Calm & Solution-Focused Approach</h3>
+                        <p class="text-text-secondary text-sm">Healthcare can be stressful. I bring a composed, problem-solving mindset to every challenge, ensuring smooth operations even during busy periods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-medical-blue/40 to-pastel-purple/20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-soft-blue/30">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-pastel-maroon to-deep-maroon flex items-center justify-center text-white text-3xl">
+                    <i class="fas fa-hand-holding-medical"></i>
+                </div>
+                
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-text-primary mb-4">Let's Work Together</h2>
+                <p class="text-text-secondary mb-8 max-w-lg mx-auto">
+                    Ready to streamline your practice? I'm here to help doctors and clinics focus on what matters most—patient care. Let's discuss how I can support your administrative needs.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <a href="mailto:renielcajutolprofessional@outlook.com" class="group p-6 rounded-2xl bg-medical-blue/30 hover:bg-medical-blue/50 transition-all border border-transparent hover:border-soft-blue">
+                        <i class="fas fa-envelope text-2xl text-deep-maroon mb-3 group-hover:scale-110 transition-transform"></i>
+                        <p class="font-semibold text-text-primary">Email</p>
+                        <p class="text-sm text-text-secondary mt-1">renielcajutolprofessional@outlook.com</p>
+                    </a>
+
+                    <a href="https://wa.me/639127996506" class="group p-6 rounded-2xl bg-green-50 hover:bg-green-100 transition-all border border-transparent hover:border-green-200">
+                        <i class="fab fa-whatsapp text-2xl text-green-600 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <p class="font-semibold text-text-primary">WhatsApp</p>
+                        <p class="text-sm text-text-secondary mt-1">+63 912 799 6505</p>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/renielcajutol-professional-58767a402/" class="group p-6 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-all border border-transparent hover:border-blue-200">
+                        <i class="fab fa-linkedin text-2xl text-blue-700 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <p class="font-semibold text-text-primary">LinkedIn</p>
+                        <p class="text-sm text-text-secondary mt-1">/in/renielcajutol-professional-58767a402/</p>
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-r from-pastel-maroon/10 to-pastel-purple/10 rounded-2xl p-6 border border-pastel-maroon/20">
+                    <p class="text-text-primary font-medium mb-2">
+                        <i class="fas fa-clock text-deep-maroon mr-2"></i>
+                        Typical Response Time: Within 24 hours
+                    </p>
+                    <p class="text-sm text-text-secondary">Available for both short-term projects and long-term partnerships</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-soft-blue/30 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pastel-maroon to-pastel-purple flex items-center justify-center text-white text-sm font-bold">
+                    RC
+                </div>
+                <span class="font-serif font-semibold text-text-primary">Reniel Cajutol, RN</span>
+            </div>
+            <p class="text-text-secondary text-sm">© 2026 Healthcare Virtual Assistant. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="text-text-secondary hover:text-deep-maroon transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-text-secondary hover:text-deep-maroon transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.hover-lift, .glass-card').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
